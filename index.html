@@ -1,18 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-</head>
-
-<body>
-
-  Получение ифрейма.
-  <script>
-    window.addEventListener('message', function(event) {
-      alert(`Получено ${event.data} из ${event.origin}`);
-    });
-  </script>
-
-</body>
+	<body>
+		iframe body
+		<script>
+			window.addEventListener('message', function (event) {
+				alert(`Get ${event.data} from ${event.origin}`);
+				document.getElementsByTagName('body')[0].innerHTML =
+					event.data;
+			});
+		</script>
+	</body>
 </html>
